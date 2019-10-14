@@ -1,0 +1,39 @@
+<main>
+
+<section>
+    <h1>{{title}}</h1>
+    <p>A place to store the things you have to do!</p>
+    <input type="text"placeholder="filter todos">
+
+    <ol>
+      <li *ngFor="let Todo of Todos">
+        <div class="ilList">
+          <span>
+          <button *ngIf="Todo.complete === true" class="completeBtn" (click)="completeTask(Todo)">complete</button>
+          <span [ngClass]="{strikethrough: Todo.complete === false}"> 
+              {{Todo.task}}
+            </span>
+          </span>
+          <button class="xBtn" (click)="removeTask(Todo)">x</button>
+          </div>
+       </li>
+    </ol>
+
+
+    <input type="text" #newToDo />
+    <button (click)="addTask(newToDo.value); newToDo.value=' ' " class="addBtn">add</button>
+</section>
+</main>
+
+
+
+<!-- <todo-list></todo-list> -->
+<!-- ^selector name//^ -->.
+<!-- <ol>
+  <li *ngFor=""Todo.complete === true"">
+    <button>complete</button>
+    <span[ngClass]={strikethrough: todo.complete}"> {{task.complete}}</span>
+    <button>x</button>
+  </li>
+
+</ol> -->

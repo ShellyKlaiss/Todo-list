@@ -1,0 +1,67 @@
+main {
+  background-color: hotpink;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 2px;
+  padding: 2px;
+}
+
+
+section {
+  background-color: white;
+  /* width: 70%; */
+  padding: 50px;
+  border-radius: 3%;
+  display: flex;
+  flex-direction: column;
+}
+
+.addBtn {
+  background: hotpink;
+  margin-left: 1%;
+  width: 100%;
+}
+
+.completeBtn {
+  background: white;
+  border-color: hotpink;
+  padding: 5px;
+  border-radius: 15%;
+
+  color: hotpink;
+}
+
+ol {
+padding: 0;
+}
+
+li {
+    padding: 3px;
+}
+
+.ilList {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.xBtn {
+    border: none;
+    background: none;
+}
+
+
+
+     /* to make space even after space-between */
+
+
+.strikethrough {
+text-decoration: line-through;
+}
