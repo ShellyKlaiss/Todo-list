@@ -2,11 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  //selector; todo-list
-  //todo com must be imorted in module component copy app.component info
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
-  //[] leave empty
   
 })
 
@@ -51,24 +48,4 @@ addTask(newToDoItem) {
 removeTask(Todo) {
   this.Todos = this.Todos.filter( t => t.task !== Todo.task );
 }
-
-// filterTask(Todo) {
-//   this.Todos = this.Todos.filter
-// }
-// completeTask(completeItem) {
-//   this.Todos = this.Todos.filter(t.complete === false );
-// }
 }
-
-//walk thru
-// interface Todo {
-//   task: string;
-//   complete: boolean;
-// }
-
-//under component
-// todos:Todo[]= [
-//   {task: 'listitem', complete: true},
-//   {task: 'listitem', complete: false},
-//   {task: 'listitem', complete: true},
-// ]}
