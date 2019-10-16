@@ -3,13 +3,12 @@
 <section>
     <h1>{{title}}</h1>
     <p>A place to store the things you have to do!</p>
-    <input type="text"placeholder="filter todos">
-
+    <input placeholder="filter" [(ngModel)]="filterText" (input)="filterTodoList()" >
     <ol>
-      <li *ngFor="let Todo of Todos">
+      <li *ngFor="let Todo of filteredTodos">
         <div class="ilList">
           <span>
-          <button *ngIf="Todo.complete === true" class="completeBtn" (click)="completeTask(Todo)">complete</button>
+          <button *ngIf="Todo.complete === true" class="completeBtn" (click)="completeTask()">complete</button>
           <span [ngClass]="{strikethrough: Todo.complete === false}"> 
               {{Todo.task}}
             </span>

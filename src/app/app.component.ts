@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
-  
+
 })
 
 
@@ -12,40 +12,35 @@ export class AppComponent {
   title = 'TODO LIST';
 
 
-    Todos = [
-{
-    task: 'Workout',
-    done: false,
-    complete: true
-},
-{
-  task: 'Grocery',
-  done: true,
-  complete: false
-},
-{
-  task: 'Pay Bills',
-  done: true,
-  complete: true
-},
-{
-  task: 'Edit 401k',
-  done: false,
-  complete: true
-}
-];
+  Todos = [
+    { task: 'Workout', complete: true },
+    { task: 'Grocery', complete: false },
+    { task: 'Pay Bills', complete: true },
+    { task: 'Edit 401k', complete: true }
+  ]
 
 
-addTask(newToDoItem) {
- var newToDo = {
-    task: newToDoItem,
-    done: false,
-    complete: true
-  };
-  this.Todos.push(newToDo);
-}
+  filterText: string;
 
-removeTask(Todo) {
-  this.Todos = this.Todos.filter( t => t.task !== Todo.task );
-}
+  filteredTodos = [...this.Todos];
+
+  filterTodoList() {
+    this.filteredTodos = this.Todos.filter(item => item.task === this.filterText);
+
+    if (!this.filterText) {
+      this.filteredTodos = [...this.Todos];
+    };
+  }
+
+  addTask(newToDoItem) {
+    var newToDo = {
+      task: newToDoItem,
+      complete: true
+    };
+    this.filteredTodos.push(newToDo);
+  }
+  
+  removeTask(Todo) {
+    this.filteredTodos = this.filteredTodos.filter(t => t.task !== Todo.task);
+  }
 }
