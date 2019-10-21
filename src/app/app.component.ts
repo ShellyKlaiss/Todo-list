@@ -13,16 +13,20 @@ export class AppComponent {
 
 
   Todos = [
-    { task: 'Workout', complete: true },
-    { task: 'Grocery', complete: false },
-    { task: 'Pay Bills', complete: true },
-    { task: 'Edit 401k', complete: true }
+    { task: 'Workout', complete: false},
+    { task: 'Grocery', complete: false},
+    { task: 'Pay Bills', complete: false},
+    { task: 'Edit 401k', complete: false}
   ]
-
-
+  
+  task: string;
+  complete: boolean = false;
   filterText: string;
 
   filteredTodos = [...this.Todos];
+
+
+ 
 
   filterTodoList() {
     this.filteredTodos = this.Todos.filter(item => item.task === this.filterText);
@@ -31,16 +35,23 @@ export class AppComponent {
       this.filteredTodos = [...this.Todos];
     };
   }
+ 
+completeTask() {
+  this.complete = true;
+}
 
-  addTask(newToDoItem) {
+addTask(newToDoItem) {
     var newToDo = {
       task: newToDoItem,
       complete: true
     };
     this.filteredTodos.push(newToDo);
   }
-  
+
   removeTask(Todo) {
     this.filteredTodos = this.filteredTodos.filter(t => t.task !== Todo.task);
+  }
+
+  indexOf() {
   }
 }

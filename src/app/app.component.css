@@ -1,3 +1,7 @@
+html, body {
+  margin: 0;
+}
+
 main {
   background-color: hotpink;
   height: 100vh;
@@ -16,7 +20,7 @@ input {
 
 section {
   background-color: white;
-  /* width: 70%; */
+  width: 50%;
   padding: 50px;
   border-radius: 3%;
   display: flex;
@@ -55,8 +59,14 @@ li {
 .xBtn {
     border: none;
     background: none;
+    font-weight: 600;
+    font-size: 20px;
 }
 
 .strikethrough {
 text-decoration: line-through;
+}
+
+.strikeBtn {
+  display: none;
 }

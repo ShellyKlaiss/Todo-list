@@ -3,17 +3,19 @@
 <section>
     <h1>{{title}}</h1>
     <p>A place to store the things you have to do!</p>
-    <input placeholder="filter" [(ngModel)]="filterText" (input)="filterTodoList()" >
+    <input placeholder="filter" [(ngModel)]="filterText" (input)="filterTodoList(); indexOf()" >
     <ol>
       <li *ngFor="let Todo of filteredTodos">
         <div class="ilList">
           <span>
-          <button *ngIf="Todo.complete === true" class="completeBtn" (click)="completeTask()">complete</button>
-          <span [ngClass]="{strikethrough: Todo.complete === false}"> 
+          <button *ngIf="complete" class="strikeBtn"></button>
+          <button *ngIf="!complete" class="completeBtn" (click)="completeTask()">complete</button>
+          <span [ngClass]="{strikethrough: this.complete}"> 
               {{Todo.task}}
             </span>
-          </span>
-          <button class="xBtn" (click)="removeTask(Todo)">x</button>
+            </span>
+          
+          <button class="xBtn"(click)="removeTask(Todo)">x</button>
           </div>
        </li>
     </ol>
@@ -23,4 +25,5 @@
     <button (click)="addTask(newToDo.value); newToDo.value=' ' " class="addBtn">add</button>
 </section>
 </main>
+
 
